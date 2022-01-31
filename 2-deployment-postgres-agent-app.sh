@@ -9,11 +9,11 @@ kubectl apply -f docker/postgres/postgres-deployment.yml
 ## Deploy Migration Agent 
 kubectl apply -f docker/agent/agent-deployment.yml
 
-## Run Migration Agent Command
-kubectl exec -i -t deployment/migration-agent -- pgloader mysql://root:password@mysql/test postgresql://spring-user:root@localhost/
+## Follow the logs of the Java Application [ postgres ]
+kubectl logs -f deployment/migration-agent
 
 ## Deploy Application Server [Postgres]
-kubectl apply -f docker/app/app-deployment-postgres.yml
+# kubectl apply -f docker/app/app-deployment-postgres.yml
 
-## Follow the logs of the Java Application [ mysql ]
-kubectl logs -f deployment/user-rest-api-postgres
+## Follow the logs of the Java Application [ postgres ]
+# kubectl logs -f deployment/user-rest-api-postgres

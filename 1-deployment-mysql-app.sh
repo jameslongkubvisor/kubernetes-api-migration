@@ -7,7 +7,7 @@ kubectl apply -f ./docker/mysql/mysql-deployment.yml
 kubectl apply -f ./docker/app/app-deployment-mysql.yml
 
 ## Port Forward to Expose MySql Database
-# kubectl port-forward service/mysql 3306:3306
+kubectl port-forward service/mysql 3306:3306
 
 ## Follow the logs of the Java Application [ mysql ]
 # kubectl logs -f deployment/user-rest-api-mysql
