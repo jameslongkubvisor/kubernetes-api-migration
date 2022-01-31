@@ -10,7 +10,7 @@ git clone https://github.com/wagnerjfr/sprinboot-rest-mysql.git
 ### Overview of Migration
 Deployment Phase
 1. Deploy MySQL Database to Kubernetes [ local ]
-2. Containerize the Java Rest API Application [ MySQL ] and Deploy to Kubernetes
+2. Deploy the Java Rest API Application [ MySQL ] to Kubernetes
 3. Test the application
 4. Deploy a Postgresql Container to the same Kubernetes Cluster [ local ]
 5. Start Migration Host [ To Assist with DB Migration ]
@@ -29,3 +29,4 @@ Two Methods of migrating the Data in the MySQL database to Postgres were conside
 It was decided using pgloader provided a much easier mechanism for migrating the data. Due to the system not being required to be production ready, persistent volumes were not bound to retain data. 
 This required the the MySQL server is configured to allow for password authentication from its users. 
 
+### Scripted Process
