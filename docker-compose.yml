@@ -43,4 +43,16 @@ services:
       - POSTGRES_DB=test
       - POSTGRES_HOST_AUTH_METHOD=trust
 
+## Docker Image For Migration Agent
+  agent: 
+    hostname: migration-agent
+    image: docker.mycompany.com/agent:latest
+    build: 
+      context: ./docker/agent/
+    depends_on:
+      - mysql
+      - postgres
+      - docker-user-rest-api
+    
+
   
