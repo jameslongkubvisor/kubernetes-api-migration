@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: migration-agent
+spec:
+  selector:
+    matchLabels:
+      app: migration-agent
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: migration-agent
+    spec:
+      containers:
+        - name: migration-agent
+          image: docker.mycompany.com/agent:latest
+          imagePullPolicy: Never
+
