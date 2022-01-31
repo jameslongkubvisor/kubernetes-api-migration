@@ -1,0 +1,46 @@
+version: '3'
+
+#define any Persistence 
+# volumes:
+
+services: 
+## MySql for initial Application Load
+  mysql:
+    # Required for Application Reference
+    hostname: mysql
+    image: docker.mycompany.com/mysql:latest
+    restart: always
+    build:
+      context: ./docker/mysql/
+    environment:
+      - MYSQL_USER=spring-user
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DATABASE=test
+
+
+## Docker Image For Springboot Application [MySql]
+  docker-user-rest-api:
+    hostname: user-rest-api-mysql
+    depends_on: 
+      - mysql
+    image: docker.mycompany.com/spring-rest:latest
+    build:
+      context: ./docker/application/
+
+## Docker Image for Postgres DB [Migratation Target]
+  postgres:
+    hostname: postgres
+    image: docker.mycompany.com/postgres:latest
+    build:
+      context: ./docker/postgres/
+    depends_on: 
+      - mysql
+      - docker-user-rest-api
+    environment:
+      - POSTGRES_USER=spring-user
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=test
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  
