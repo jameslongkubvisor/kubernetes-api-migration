@@ -11,7 +11,7 @@ import javax.persistence.Id;
 
 @Data
 @NoArgsConstructor
-@Entity
+@Entity(name="\"User\"")
 public class User {
 
     @Id
