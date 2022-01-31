@@ -53,6 +53,7 @@ services:
       - mysql
       - postgres
       - docker-user-rest-api
+    command: pgloader mysql://root:password@mysql/test postgresql://spring-user:root@localhost/
     
 
   
