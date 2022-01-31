@@ -7,7 +7,7 @@ git clone https://github.com/wagnerjfr/sprinboot-rest-mysql.git
 cd sprinboot-rest-mysql
 
 ## Install Dependencies [ Skip Tests as it causes Build to fail]
-bash ./mvnw -DskipTests
+bash ./mvnw install -DskipTests
 
 ## Build
 bash ./mvnw clean package -DskipTests
