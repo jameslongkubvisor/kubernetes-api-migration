@@ -4,5 +4,5 @@
 kubectl apply -f ./docker/mysql/mysql-deployment.yml
 
 ## Deploy Application Server [MySql]
-kubectl apply -f ./docker/application/app-deployment-mysql.yml
+kubectl apply -f ./docker/app/app-deployment-mysql.yml
 
