@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM docker pull debian:stable-slim
 # Update Apt Repository
 RUN apt-get update
 
