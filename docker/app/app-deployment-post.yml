@@ -19,7 +19,11 @@ spec:
           imagePullPolicy: Never
           env:
             - name: MYSQL_ADDR
-              value: mysql
+              value: postgres
+            - name: DATABASE_TYPE
+              value: postgresql
+            - name: DATA_BASE_PORT
+              value: "5432"
           ports:
             - containerPort: 8080
               name: user-rest-api-postgres
