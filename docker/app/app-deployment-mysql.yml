@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: user-rest-api-mysql
-          image: docker.mycompany.com/spring-rest:latest
+          image: docker.mycompany.com/spring-rest-mysql:latest
           imagePullPolicy: Never
           env:
             - name: MYSQL_ADDR

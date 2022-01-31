@@ -20,13 +20,13 @@ services:
 
 
 ## Docker Image For Springboot Application [MySql]
-  docker-user-rest-api:
-    hostname: user-rest-api-mysql
-    depends_on: 
-      - mysql
-    image: docker.mycompany.com/spring-rest:latest
-    build:
-      context: ./docker/app/
+  # docker-user-rest-api:
+  #   hostname: user-rest-api-mysql
+  #   depends_on: 
+  #     - mysql
+  #   image: docker.mycompany.com/spring-rest:latest
+  #   build:
+  #     context: ./docker/app/
 
 ## Docker Image for Postgres DB [Migratation Target]
   postgres:
