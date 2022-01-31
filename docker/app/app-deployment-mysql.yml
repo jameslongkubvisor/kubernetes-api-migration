@@ -30,7 +30,7 @@ metadata:
   name: user-rest-api-mysql
 spec:
   ports:
-  - port: 8080
+  - port: 9000
     targetPort: 8080
   selector:
     app: user-rest-api-mysql

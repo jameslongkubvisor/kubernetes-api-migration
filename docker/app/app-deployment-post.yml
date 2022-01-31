@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: user-rest-api-postgres
-          image: docker.mycompany.com/spring-rest:latest
+          image: docker.mycompany.com/spring-rest-mysql:latest
           imagePullPolicy: Never
           env:
             - name: MYSQL_ADDR
@@ -30,7 +30,7 @@ metadata:
   name: user-rest-api-postgres
 spec:
   ports:
-  - port: 9000
+  - port: 9001
     targetPort: 8080
   selector:
     app: user-rest-api-postgres
