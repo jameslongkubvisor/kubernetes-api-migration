@@ -26,7 +26,7 @@ services:
       - mysql
     image: docker.mycompany.com/spring-rest:latest
     build:
-      context: ./docker/application/
+      context: ./docker/app/
 
 ## Docker Image for Postgres DB [Migratation Target]
   postgres:

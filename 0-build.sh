@@ -19,7 +19,7 @@ bash ./mvnw clean package -DskipTests
 bash ./mvnw clean package docker:build -DskipTests
 
 ## Copy Output Jar to Do
-cp ./target/docker/spring-rest-mysql-0.0.1-SNAPSHOT.jar ../docker/
+cp ./target/docker/spring-rest-mysql-0.0.1-SNAPSHOT.jar ../docker/app
 
 ## Exit Directory [ Back to File Root ]
 cd ..
