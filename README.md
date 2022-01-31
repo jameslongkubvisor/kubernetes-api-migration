@@ -23,3 +23,7 @@ Migration Phase
 Wrap-up / Changeover Phase
 
 ### Technical Considerations 
+Two Methods of migrating the Data in the MySQL database to Postgres were considered. 
+1. Backup MySQL Database to a shared Volume and import into Postgres
+2. Using an popular tool for Postgres Database Migrations [ pgloader ] running on an independent host in the cluster
+It was decided using pgloader provided a much easier mechanism for migrating the data. Due to the system not being required to be production ready, persistent volumes were not bound to retain data.
