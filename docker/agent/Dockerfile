@@ -1,4 +1,4 @@
-FROM docker pull debian:stable-slim
+FROM debian:stable-slim
 # Update Apt Repository
 RUN apt-get update
 
