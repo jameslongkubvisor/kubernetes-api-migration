@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,7 +16,7 @@ spec:
     spec:
       containers:
         - name: user-rest-api-postgres
-          image: docker.mycompany.com/spring-rest-mysql:latest
+          image: docker.mycompany.com/spring-rest-postgres:latest
           imagePullPolicy: Never
           env:
             - name: MYSQL_ADDR
