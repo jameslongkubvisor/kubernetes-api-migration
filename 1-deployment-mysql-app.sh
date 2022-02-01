@@ -11,3 +11,4 @@ kubectl apply -f ./docker/app/app-deployment-mysql.yml
 
 ## Port Forward to Expose Running Java Application [ mysql ]
 # kubectl port-forward service/user-rest-api-mysql 9000:9000
+# kubectl port-forward service/user-rest-api-postgres 9001:9001

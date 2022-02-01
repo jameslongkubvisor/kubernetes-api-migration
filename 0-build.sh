@@ -10,7 +10,7 @@ cd sprinboot-rest-mysql
 bash ./mvnw install -DskipTests
 
 ## Build
-# bash ./mvnw clean package -DskipTests
+bash ./mvnw clean package -DskipTests
 
 ## Initial Start [ MySql -> Load User]
 # bash ./mvnw clean spring-boot:run
