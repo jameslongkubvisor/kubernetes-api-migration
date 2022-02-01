@@ -1,6 +1,6 @@
 spring:
   jpa:
-    hibernate.ddl-auto: create
+    hibernate.ddl-auto: update
   datasource:
     url: jdbc:${DATABASE_TYPE:mysql}://${MYSQL_ADDR:localhost}:${DATABASE_PORT:3306}/test
     username: spring-user
