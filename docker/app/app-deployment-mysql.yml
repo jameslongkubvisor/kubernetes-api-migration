@@ -22,7 +22,7 @@ spec:
               value: mysql
             - name: DATABASE_TYPE
               value: mysql
-            - name: DATA_BASE_PORT
+            - name: DATABASE_PORT
               value: "3306"
           ports:
             - containerPort: 8080

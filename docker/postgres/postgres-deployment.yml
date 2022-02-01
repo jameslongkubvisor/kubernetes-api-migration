@@ -29,7 +29,6 @@ spec:
 
           ports:
             - containerPort: 5432
-              name: postgres
               
 ---
 apiVersion: v1

@@ -22,7 +22,7 @@ spec:
               value: postgres
             - name: DATABASE_TYPE
               value: postgresql
-            - name: DATA_BASE_PORT
+            - name: DATABASE_PORT
               value: "5432"
           ports:
             - containerPort: 8080
