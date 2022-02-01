@@ -1,0 +1,40 @@
+#!bin/bash
+
+## Deploy MySql Server
+kubectl apply -f ./docker/mysql/mysql-deployment.yml
+
+## Deploy Application Server [MySql]
+kubectl apply -f ./docker/app/app-deployment-mysql.yml
+
+## Follow the logs of the Java Application [ mysql ]
+# kubectl logs -f deployment/user-rest-api-mysql
+
+## Port Forward to Expose Running Java Application [ mysql ]
+# kubectl port-forward service/user-rest-api-mysql 9000:9000
+# kubectl port-forward service/user-rest-api-postgres 9001:9001
+
+## Deploy Postgres Server
+kubectl apply -f docker/postgres/postgres-deployment.yml
+
+## Deploy Application Server [Postgres]
+# kubectl apply -f docker/app/app-deployment-postgres.yml
+
+## Port Forward to Expose MySql Database
+kubectl port-forward service/mysql 3306:3306 
+
+## Port Forward to Expose Postgres Database
+kubectl port-forward service/postgres 5432:5432 
+
+## Migrate Data from Mysql to Postgres [ execute on host]
+pgloader mysql://root:password@localhost:3306/test postgresql://spring-user:secret@localhost:5432/test
+
+## Port Forward to Expose Running Java Application [ mysql ]
+# kubectl port-forward service/user-rest-api-mysql 9000:9000
+# kubectl port-forward service/user-rest-api-postgres 9001:9001
+
+## Deploy Java Application Server [Postgres]
+kubectl apply -f docker/app/app-deployment-postgres.yml
+
+## Follow the logs of the Java Application [ postgres ]
+kubectl logs -f deployment/user-rest-api-postgres
+
