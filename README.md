@@ -93,7 +93,8 @@ Open the port to the Java Application
 
 Test using Curl
 ```
-curl -X GET "http://localhost:9001/api/users"
+curl -X GET "http://localhost:9000/api/users"
+curl -X GET "http://localhost:9000/api/users"
 ```
 
 ### Cleanup
